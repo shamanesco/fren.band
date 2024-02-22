@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fren - Instrumental Rock Band from Kraków, Poland</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.ico">
+<style>
+    body, html {
+    height: 100%;
+    margin: 0;
+    background-image: url('bg-faded.jpeg');
+    background-position: center center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the image fixed during scroll */
+    background-size: cover; /* Covers the entire page, maintaining aspect ratio */
+    -webkit-background-size: cover; /* For Safari and Chrome */
+    -moz-background-size: cover; /* For Firefox */
+    -o-background-size: cover; /* For Opera */
+}
+/* Adjustments for mobile devices */
+@media (max-width: 768px) {
+    body, html {
+        background-attachment: scroll; /* Change to scroll to improve scaling */
+        background-position: center center; /* Adjust if needed to focus on a specific part of the image */
+        /* Consider using a different, possibly smaller image for mobile */
+        background-image: url('bg-faded.jpeg');
+    }
+}
+    .header-content, .footer-links a, .contact-info a {
+        color: black; /* Ensuring text is black as specified */
+    }
+    .footer-links a:hover {
+    color: #fff; /* Footer social media black on hover */
+}
+.header-content {
+    padding-top: 20px; /* Adds 20px space above the header content */
+    /* Other styling properties */
+}
+.footer-social-links a {
+    color: #777; /* Initial color */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.footer-social-links a:hover {
+    color: #000; /* Color changes to black on hover */
+}
+    .band-info {
+        text-align: justify;
+        margin: 20px 0;
+        padding: 0 15px; /* Adds padding to prevent text from touching the edges */
+        font-size: 1.25rem; /* Starting font size */
+    }
+    .music-iframe {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Center the iframes */
+        gap: 20px; /* Adds space between the iframes */
+    }
+    .music-iframe iframe {
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds a subtle shadow for depth */
+        transition: transform 0.3s ease; /* Smooth transition for scaling */
+    }
+    .music-iframe iframe:hover {
+        transform: scale(1.05); /* Slightly enlarges the iframe on hover */
+    }
+    /* Custom styles for social media icons */
+    .footer-links a {
+        font-size: 30px;
+        margin: 0 20px;
+    }
+    @media (max-width: 992px) {
+        .music-iframe iframe {
+            flex: 0 1 calc(50% - 20px); /* Adjusts to take half the container width */
+        }
+    }
+    @media (max-width: 768px) {
+        .music-iframe iframe {
+            flex: 0 1 calc(100% - 20px); /* Full width on smaller screens */
+        }
+        
+    }
+.band-info-container {
+    font-family: 'Arial', sans-serif; /* Use a readable font */
+    color: #333; /* Dark grey color for better readability */
+    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white background */
+    padding: 20px; /* Add some padding around the text */
+    line-height: 1.6; /* Good line height for readability */
+    font-size: 16px; /* Adequate font size for most readers */
+}
+
+.band-info-container p {
+    margin-bottom: 1.6em; /* 2 line spacing between paragraphs */
+}
+.contact-info .card {
+    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white background */
+    border-radius: 10px; /* Rounds the corners of the card */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds a subtle shadow for depth */
+    margin-top: 20px; /* Adds space above the card */
+}
+
+.contact-info .card-body {
+    text-align: center; /* Centers the text inside the card */
+}
+
+.contact-info .card-text a {
+    color: #007bff; /* Bootstrap primary color for links */
+    text-decoration: none; /* Removes underline from links */
+}
+
+.contact-info .card-text a:hover {
+    text-decoration: underline; /* Adds underline on hover for better accessibility */
+}
+
+.contact-info .card-title {
+    margin-bottom: 20px; /* Adds space below the card title */
+}
+
+.contact-info i {
+    margin-right: 10px; /* Adds space to the right of the icon */
+}
+.video-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.youtube-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds a subtle shadow for depth */
+}
+
+@media (max-width: 768px) {
+    .video-container {
+        padding-top: 75%; /* Adjusts aspect ratio for smaller screens */
+    }
+}
+/* @media (max-width: 768px) {
+    body, html {
+        background-attachment: scroll; /* Allows the background to scroll with the page, improving performance and avoiding zooming issues */
+      /*   background-position: top center; /* Adjusts the position to better fit mobile screens */
+      /*   background-image: url('bg-faded-mobile.jpeg'); /* Optional: A different, more suitable image for smaller screens */
+    }
+} 
+.header-social-links {
+    display: flex;
+    justify-content: center; /* Center align the icons */
+    padding: 10px 0; /* Add some padding */
+}
+
+.header-social-links a {
+    color: #000; 
+    margin: 0 10px; /* Spacing between icons */
+    font-size: 24px; /* Icon size, adjust as needed */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.header-social-links a:hover {
+    color: #fff; /* Header social media black on hover */
+}
+
+.social-icon-img {
+    width: 24px; /* Match the font size of Font Awesome icons */
+    height: 24px; /* Match the font size of Font Awesome icons */
+    vertical-align: middle; /* Aligns the image with text/icons */
+}
+
+
+header {
+    background-color: transparent; /* transparent background for the header */
+}
+</style>
+</head>
+<body>
+
+    <div class="container text-center py-5">
+        <header>
+            <img src="logo.png.webp" alt="FREN Logo" class="my-4" style="max-width: 200px;">
+            <div class="header-social-links">
+    <a href="https://www.facebook.com/FrenBand"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.youtube.com/channel/FrenBand"><i class="fab fa-youtube"></i></a>
+        <a href="https://fren.bandcamp.com/"><i class="fab fa-bandcamp"></i></a>
+        <a href="https://open.spotify.com/artist/41vbTc5B1zRaSyvhZXXBru"><i class="fab fa-spotify"></i></a>
+    </div>
+            <!-- <h2 class="header-content">Absolutely terrific instrumental music</h2> -->
+        </header>
+
+        <section class="container my-5">
+    <div class="band-info-container">
+    <p class="band-info">Polish-Ukrainian <b>Fren</b> erupts onto the scene with a blend of emotionally charged instrumental music, where sublime melancholy naturally coexists with spontaneity, flame and energy. The band is not afraid to fill their long compositions with multilayered complex landscapes, smoothly shifting between dreamlike trances and unbridled dynamics. </p>
+<p class="band-info">The band was formed in 2017 by pianist <b>Oskar Cenkier</b>, guitarist <b>Michał Chalota</b>, bassist <b>Andrew Shamanov</b> & drummer <b>Oleksii Fedoriv</b>. Under Fren monicker they have played a number of warmly received shows and shared the stage with Caravan (UK), Stoned Jesus (UA), The Sonic Dawn (DK), Virgil Donati’s Icefish (IT), Steve Rothery (UK) and others. Their sound has been lauded as a <b>post-progressive fusion of vintage influences and innovative ideas</b> , drawing comparisons to iconic bands such as Pink Floyd, King Crimson, Änglagård, and Caravan.</p>
+<p class="band-info">Fren’s critically acclaimed debut album titled <b>“Where Do You Want Ghosts to Reside”</b> was released in 2020. Building on their success, the band followed up with their eagerly anticipated second album, <b>"All the Pretty Days"</b>, in 2022. This latest release further showcases the band's evolution, cementing their status as dynamic creators in the post-progressive genre and beyond.
+</p>
+</div>
+</section>
+
+        <section class="music-iframe d-flex flex-wrap justify-content-center">
+            <iframe style="border: 0; width: 330px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album=3217790224/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless></iframe>
+            <iframe style="border: 0; width: 330px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album=2339591320/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless></iframe>
+
+        </section>
+
+       <section class="my-5 video-container">
+    <iframe class="youtube-video" src="https://www.youtube.com/embed/RLWw_CDFnpA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+
+<section class="contact-info mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Contact Us</h5>
+                    <p class="card-text"><i class="fas fa-envelope"></i> <a href="mailto:band@fren.band">band@fren.band</a></p>
+                    <p class="card-text"><i class="fas fa-phone"></i> <a href="tel:+48791773957">+48 791773957</a></p>
+                    <p class="card-text"><i class="fas fa-file-alt"></i> <a href="https://drive.google.com/file/d/1GY8pLDlHJVtpCariK3IUsPO3Obha0DKb/view?usp=share_link" target="_blank">Press Pack</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <footer>
+    <div class="footer-links d-flex justify-content-center my-3">
+        <a href="https://www.facebook.com/FrenBand" class="social-icon"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.youtube.com/channel/FrenBand" class="social-icon"><i class="fab fa-youtube"></i></a>
+        <a href="https://fren.bandcamp.com/" class="social-icon"><i class="fab fa-bandcamp"></i></a>
+        <a href="https://open.spotify.com/artist/41vbTc5B1zRaSyvhZXXBru" class="social-icon"><i class="fab fa-spotify"></i>
+</a>
+    </div>
+    <p>&copy; 2017-2024 Fren. All rights reserved.</p>
+</footer>
+    </div>
+
+</body>
+</html>
